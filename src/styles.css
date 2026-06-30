@@ -58,36 +58,44 @@
 :root {
   --radius: 1rem;
 
-  /* Midnight Indigo palette */
-  --background: oklch(0.13 0.04 280);
-  --foreground: oklch(0.97 0.01 270);
-  --ink: oklch(0.08 0.03 280);
+  /* Luxury Black & Gold palette */
+  /* #0A0A0A */
+  --background: oklch(0.07 0 0);
+  /* #F8FAFC */
+  --foreground: oklch(0.98 0.005 250);
+  --ink: oklch(0.05 0 0);
 
-  --surface: oklch(0.17 0.05 280);
-  --surface-elevated: oklch(0.21 0.06 280);
+  /* #111827 navy */
+  --surface: oklch(0.19 0.03 265);
+  --surface-elevated: oklch(0.23 0.03 265);
 
-  --card: oklch(0.17 0.05 280);
-  --card-foreground: oklch(0.97 0.01 270);
-  --popover: oklch(0.17 0.05 280);
-  --popover-foreground: oklch(0.97 0.01 270);
+  /* glass card */
+  --card: oklch(1 0 0 / 0.04);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.12 0.01 265);
+  --popover-foreground: oklch(0.98 0.005 250);
 
-  --primary: oklch(0.62 0.22 275);
-  --primary-foreground: oklch(0.99 0.005 270);
-  --electric: oklch(0.68 0.21 270);
-  --glow: oklch(0.62 0.22 275 / 0.55);
+  /* #D4AF37 gold */
+  --primary: oklch(0.76 0.135 88);
+  --primary-foreground: oklch(0.1 0.005 80);
+  /* #E6C55A gold hover */
+  --electric: oklch(0.83 0.14 90);
+  --glow: oklch(0.76 0.135 88 / 0.35);
 
-  --secondary: oklch(0.24 0.06 280);
-  --secondary-foreground: oklch(0.97 0.01 270);
-  --muted: oklch(0.22 0.05 280);
-  --muted-foreground: oklch(0.72 0.03 270);
-  --accent: oklch(0.28 0.08 278);
-  --accent-foreground: oklch(0.97 0.01 270);
+  --secondary: oklch(0.17 0.02 265);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.17 0.02 265);
+  /* #94A3B8 */
+  --muted-foreground: oklch(0.7 0.025 255);
+  --accent: oklch(0.22 0.03 265);
+  --accent-foreground: oklch(0.98 0.005 250);
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.99 0.005 270);
 
-  --border: oklch(1 0 0 / 0.08);
-  --input: oklch(1 0 0 / 0.1);
-  --ring: oklch(0.62 0.22 275);
+  /* gold-tinted border rgba(212,175,55,0.15) */
+  --border: oklch(0.76 0.135 88 / 0.18);
+  --input: oklch(0.76 0.135 88 / 0.2);
+  --ring: oklch(0.76 0.135 88);
 }
 
 @layer base {
@@ -106,8 +114,8 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.3 0.15 275 / 0.4), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 100%, oklch(0.25 0.12 290 / 0.3), transparent 60%);
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.76 0.135 88 / 0.08), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, oklch(0.19 0.03 265 / 0.6), transparent 60%);
     background-attachment: fixed;
   }
 
