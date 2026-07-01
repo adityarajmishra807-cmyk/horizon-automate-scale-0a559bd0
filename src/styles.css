@@ -2,28 +2,27 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import "@fontsource/sora/400.css";
-@import "@fontsource/sora/500.css";
-@import "@fontsource/sora/600.css";
-@import "@fontsource/sora/700.css";
-@import "@fontsource/sora/800.css";
-@import "@fontsource/manrope/400.css";
-@import "@fontsource/manrope/500.css";
-@import "@fontsource/manrope/600.css";
-@import "@fontsource/manrope/700.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Sans", ui-monospace, monospace;
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -47,54 +46,43 @@
 
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --color-glow: var(--glow);
+  --color-gold: var(--primary);
+  --color-gold-hover: var(--electric);
   --color-electric: var(--electric);
   --color-ink: var(--ink);
-
-  --shadow-glow: 0 0 60px -10px var(--glow);
-  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.06) inset, 0 30px 60px -30px oklch(0 0 0 / 0.6);
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 0px;
 
-  /* Luxury Black & Gold palette */
-  /* #0A0A0A */
-  --background: oklch(0.07 0 0);
-  /* #F8FAFC */
-  --foreground: oklch(0.98 0.005 250);
+  /* Luxury Neo-Brutalist Black & Gold */
+  --background: oklch(0.07 0 0);        /* #0A0A0A */
+  --foreground: oklch(0.98 0.005 250);  /* #F8FAFC */
   --ink: oklch(0.05 0 0);
 
-  /* #111827 navy */
-  --surface: oklch(0.19 0.03 265);
+  --surface: oklch(0.19 0.03 265);      /* #111827 */
   --surface-elevated: oklch(0.23 0.03 265);
 
-  /* glass card */
-  --card: oklch(1 0 0 / 0.04);
+  --card: oklch(0.09 0 0);
   --card-foreground: oklch(0.98 0.005 250);
-  --popover: oklch(0.12 0.01 265);
+  --popover: oklch(0.09 0 0);
   --popover-foreground: oklch(0.98 0.005 250);
 
-  /* #D4AF37 gold */
-  --primary: oklch(0.76 0.135 88);
-  --primary-foreground: oklch(0.1 0.005 80);
-  /* #E6C55A gold hover */
-  --electric: oklch(0.83 0.14 90);
-  --glow: oklch(0.76 0.135 88 / 0.35);
+  --primary: oklch(0.76 0.135 88);      /* #D4AF37 gold */
+  --primary-foreground: oklch(0.08 0 0);
+  --electric: oklch(0.83 0.14 90);      /* #E6C55A hover */
 
-  --secondary: oklch(0.17 0.02 265);
+  --secondary: oklch(0.15 0 0);
   --secondary-foreground: oklch(0.98 0.005 250);
-  --muted: oklch(0.17 0.02 265);
-  /* #94A3B8 */
-  --muted-foreground: oklch(0.7 0.025 255);
-  --accent: oklch(0.22 0.03 265);
-  --accent-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.13 0 0);
+  --muted-foreground: oklch(0.7 0.025 255); /* #94A3B8 */
+  --accent: oklch(0.76 0.135 88);
+  --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.99 0.005 270);
 
-  /* gold-tinted border rgba(212,175,55,0.15) */
-  --border: oklch(0.76 0.135 88 / 0.18);
-  --input: oklch(0.76 0.135 88 / 0.2);
+  --border: oklch(0.76 0.135 88 / 0.6);
+  --input: oklch(0.76 0.135 88 / 0.4);
   --ring: oklch(0.76 0.135 88);
 }
 
@@ -111,17 +99,18 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.76 0.135 88 / 0.08), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 100%, oklch(0.19 0.03 265 / 0.6), transparent 60%);
-    background-attachment: fixed;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }
 
@@ -129,22 +118,45 @@
   text-wrap: balance;
 }
 
-@utility grid-bg {
+@utility grid-lines {
   background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, oklch(0.76 0.135 88 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.76 0.135 88 / 0.08) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
-@utility noise {
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.04;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
-  }
+@utility grid-lines-dense {
+  background-image:
+    linear-gradient(to right, oklch(0.76 0.135 88 / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.76 0.135 88 / 0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@utility brutal-border {
+  border: 4px solid var(--primary);
+}
+
+@utility brutal-shadow {
+  box-shadow: 8px 8px 0 0 var(--primary);
+}
+
+@utility brutal-shadow-lg {
+  box-shadow: 12px 12px 0 0 var(--primary);
+}
+
+@utility label-mono {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+@utility marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
