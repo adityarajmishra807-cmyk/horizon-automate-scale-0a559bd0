@@ -109,7 +109,7 @@ const portfolio = [
 const faqs = [
   {
     q: "Who do you work with?",
-    a: "Small and medium businesses ready to invest in real infrastructure — not one-off tactics. Typical engagements start at $8k.",
+    a: "Small and medium businesses ready to invest in real infrastructure — not one-off tactics. Typical engagements start at ₹8k.",
   },
   {
     q: "How fast can you ship?",
@@ -584,9 +584,9 @@ function Contact() {
                 <label className="col-span-2 md:col-span-1">
                   <div className="label-mono text-primary mb-2">04 / BUDGET</div>
                   <select className="w-full bg-transparent border-b-4 border-primary/40 focus:border-primary outline-none py-3 font-display text-xl">
-                    <option className="bg-background">$8k – $20k</option>
-                    <option className="bg-background">$20k – $50k</option>
-                    <option className="bg-background">$50k+</option>
+                    <option className="bg-background">₹8k – ₹20k</option>
+                    <option className="bg-background">₹20k – ₹50k</option>
+                    <option className="bg-background">₹50k+</option>
                   </select>
                 </label>
                 <label className="col-span-2">
