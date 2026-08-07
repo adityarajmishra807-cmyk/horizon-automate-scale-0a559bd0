@@ -584,9 +584,9 @@ function Contact() {
                 <label className="col-span-2 md:col-span-1">
                   <div className="label-mono text-primary mb-2">04 / BUDGET</div>
                   <select className="w-full bg-transparent border-b-4 border-primary/40 focus:border-primary outline-none py-3 font-display text-xl">
-                    <option className="bg-background">$8k – $20k</option>
-                    <option className="bg-background">$20k – $50k</option>
-                    <option className="bg-background">$50k+</option>
+                    <option className="bg-background">₹8k – ₹20k</option>
+                    <option className="bg-background">₹20k – ₹50k</option>
+                    <option className="bg-background">50k+</option>
                   </select>
                 </label>
                 <label className="col-span-2">
