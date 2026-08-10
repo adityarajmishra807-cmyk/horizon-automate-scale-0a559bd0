@@ -182,7 +182,12 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 border-b-4 border-primary bg-background">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <div className="h-8 w-8 border-4 border-primary bg-primary" />
+          <img
+            src={logoMark.url}
+            alt="Horizon Works logo"
+            className="h-9 w-9 md:h-10 md:w-10 object-contain"
+          />
+
           <span className="font-display text-lg md:text-xl font-bold tracking-tight">
             HORIZON<span className="text-primary">/</span>WORKS
           </span>
