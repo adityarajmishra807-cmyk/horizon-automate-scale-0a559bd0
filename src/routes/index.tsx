@@ -11,6 +11,7 @@ import {
   MessageSquare,
   Calendar,
 } from "lucide-react";
+import logoMark from "@/assets/horizon-works-mark.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
