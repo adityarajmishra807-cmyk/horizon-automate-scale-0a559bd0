@@ -125,6 +125,43 @@ const faqs = [
   },
 ];
 
+const pricing = [
+  {
+    name: "STARTER",
+    price: "₹5,000",
+    description: "Perfect for small businesses and personal brands taking their first professional step online.",
+    features: ["3–5 pages", "Responsive design", "Contact / enquiry form", "Basic SEO", "Deployment"],
+  },
+  {
+    name: "PROFESSIONAL",
+    price: "₹10,000",
+    description: "Our most popular choice for growing businesses that need a polished, high-converting presence.",
+    features: [
+      "5–8 pages",
+      "Premium UI",
+      "Smooth animations",
+      "WhatsApp integration",
+      "Enquiry system",
+      "SEO optimization",
+      "Deployment",
+    ],
+    popular: true,
+  },
+  {
+    name: "BUSINESS",
+    price: "₹15,000+",
+    description: "Built for serious businesses that need custom systems, automation, and ongoing control.",
+    features: [
+      "Custom design",
+      "Advanced animations",
+      "CMS / database",
+      "Business automation",
+      "Admin functionality",
+      "Maintenance",
+    ],
+  },
+];
+
 /* -------------------------------- ui -------------------------------- */
 
 function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
