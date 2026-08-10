@@ -125,6 +125,43 @@ const faqs = [
   },
 ];
 
+const pricing = [
+  {
+    name: "STARTER",
+    price: "₹5,000",
+    description: "Perfect for small businesses and personal brands taking their first professional step online.",
+    features: ["3–5 pages", "Responsive design", "Contact / enquiry form", "Basic SEO", "Deployment"],
+  },
+  {
+    name: "PROFESSIONAL",
+    price: "₹10,000",
+    description: "Our most popular choice for growing businesses that need a polished, high-converting presence.",
+    features: [
+      "5–8 pages",
+      "Premium UI",
+      "Smooth animations",
+      "WhatsApp integration",
+      "Enquiry system",
+      "SEO optimization",
+      "Deployment",
+    ],
+    popular: true,
+  },
+  {
+    name: "BUSINESS",
+    price: "₹15,000+",
+    description: "Built for serious businesses that need custom systems, automation, and ongoing control.",
+    features: [
+      "Custom design",
+      "Advanced animations",
+      "CMS / database",
+      "Business automation",
+      "Admin functionality",
+      "Maintenance",
+    ],
+  },
+];
+
 /* -------------------------------- ui -------------------------------- */
 
 function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
@@ -153,6 +190,7 @@ function Nav() {
           <a href="#services" className="hover:text-primary transition-colors">Services</a>
           <a href="#process" className="hover:text-primary transition-colors">Process</a>
           <a href="#work" className="hover:text-primary transition-colors">Work</a>
+          <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
           <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
         </nav>
         <a
@@ -440,12 +478,99 @@ function Results() {
   );
 }
 
+function Pricing() {
+  return (
+    <section id="pricing" className="border-b-4 border-primary bg-surface/40">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-32">
+        <SectionLabel n="04">Pricing</SectionLabel>
+
+        <div className="grid grid-cols-12 gap-6 mb-16">
+          <div className="col-span-12 lg:col-span-6">
+            <h2 className="font-display font-bold text-5xl md:text-7xl leading-[0.9] mb-6">
+              Choose the right<br />
+              <span className="text-primary">website</span> for your business.
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-6 flex items-end">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-lg lg:ml-auto">
+              Simple, transparent packages designed to take your business online.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {pricing.map((plan) => (
+            <div
+              key={plan.name}
+              className={`relative flex flex-col p-8 md:p-10 transition-all ${
+                plan.popular
+                  ? "bg-primary text-primary-foreground brutal-border brutal-shadow-lg"
+                  : "bg-background brutal-border hover:-translate-x-1 hover:-translate-y-1 hover:brutal-shadow"
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-background text-foreground border-4 border-primary px-4 py-1 label-mono">
+                  MOST POPULAR
+                </div>
+              )}
+
+              <div className="mb-8">
+                <div className={`label-mono mb-4 ${plan.popular ? "text-primary-foreground/80" : "text-primary"}`}>
+                  {plan.name}
+                </div>
+                <div className="font-display font-bold text-5xl md:text-6xl leading-none mb-4">
+                  {plan.price}
+                </div>
+                <p className={`text-base leading-relaxed ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  {plan.description}
+                </p>
+              </div>
+
+              <div className={`flex-1 border-t-4 pt-8 mb-10 ${plan.popular ? "border-primary-foreground/30" : "border-primary/40"}`}>
+                <ul className="space-y-4">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-4">
+                      <span className={`h-2 w-2 mt-2 shrink-0 ${plan.popular ? "bg-primary-foreground" : "bg-primary"}`} />
+                      <span className="font-display font-bold text-lg leading-snug">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href="#contact"
+                className={`group w-full py-5 px-6 font-display font-bold text-lg uppercase flex items-center justify-between transition-all ${
+                  plan.popular
+                    ? "bg-background text-foreground brutal-border hover:-translate-x-1 hover:-translate-y-1"
+                    : "bg-primary text-primary-foreground brutal-border hover:-translate-x-1 hover:-translate-y-1"
+                }`}
+              >
+                <span>Get Started</span>
+                <ArrowUpRight className="!size-5 group-hover:rotate-45 transition-transform" />
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground text-lg md:text-xl">
+            Need something custom?{" "}
+            <a href="#contact" className="text-primary font-display font-bold underline decoration-2 underline-offset-4 hover:text-electric transition-colors">
+              Let's build it around your business.
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="border-b-4 border-primary">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-32">
-        <SectionLabel n="04">FAQ</SectionLabel>
+        <SectionLabel n="05">FAQ</SectionLabel>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-4">
             <h2 className="font-display font-bold text-5xl md:text-6xl leading-[0.9]">
@@ -493,7 +618,7 @@ function Contact() {
   return (
     <section id="contact" className="border-b-4 border-primary bg-surface/40">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-32">
-        <SectionLabel n="05">Contact</SectionLabel>
+        <SectionLabel n="06">Contact</SectionLabel>
 
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
@@ -636,6 +761,7 @@ function Footer() {
               <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
               <li><a href="#process" className="hover:text-primary transition-colors">Process</a></li>
               <li><a href="#work" className="hover:text-primary transition-colors">Work</a></li>
+              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
@@ -669,6 +795,7 @@ function HorizonHome() {
       <Process />
       <Portfolio />
       <Results />
+      <Pricing />
       <FAQ />
       <Contact />
       <Footer />
