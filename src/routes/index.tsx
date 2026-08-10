@@ -793,6 +793,7 @@ function HorizonHome() {
       <Process />
       <Portfolio />
       <Results />
+      <Pricing />
       <FAQ />
       <Contact />
       <Footer />
