@@ -190,6 +190,7 @@ function Nav() {
           <a href="#services" className="hover:text-primary transition-colors">Services</a>
           <a href="#process" className="hover:text-primary transition-colors">Process</a>
           <a href="#work" className="hover:text-primary transition-colors">Work</a>
+          <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
           <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
         </nav>
         <a
@@ -760,6 +761,7 @@ function Footer() {
               <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
               <li><a href="#process" className="hover:text-primary transition-colors">Process</a></li>
               <li><a href="#work" className="hover:text-primary transition-colors">Work</a></li>
+              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
