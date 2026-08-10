@@ -11,6 +11,7 @@ import {
   MessageSquare,
   Calendar,
 } from "lucide-react";
+import logoMark from "@/assets/horizon-works-mark.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -181,7 +182,12 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 border-b-4 border-primary bg-background">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <div className="h-8 w-8 border-4 border-primary bg-primary" />
+          <img
+            src={logoMark.url}
+            alt="Horizon Works logo"
+            className="h-9 w-9 md:h-10 md:w-10 object-contain"
+          />
+
           <span className="font-display text-lg md:text-xl font-bold tracking-tight">
             HORIZON<span className="text-primary">/</span>WORKS
           </span>
@@ -746,7 +752,12 @@ function Footer() {
         <div className="grid grid-cols-12 gap-6 pb-12 border-b-2 border-primary/40">
           <div className="col-span-12 md:col-span-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-8 w-8 border-4 border-primary bg-primary" />
+              <img
+                src={logoMark.url}
+                alt="Horizon Works logo"
+                className="h-10 w-10 object-contain"
+              />
+
               <span className="font-display text-xl font-bold tracking-tight">
                 HORIZON<span className="text-primary">/</span>WORKS
               </span>
