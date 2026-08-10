@@ -569,7 +569,7 @@ function FAQ() {
   return (
     <section className="border-b-4 border-primary">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-32">
-        <SectionLabel n="04">FAQ</SectionLabel>
+        <SectionLabel n="05">FAQ</SectionLabel>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-4">
             <h2 className="font-display font-bold text-5xl md:text-6xl leading-[0.9]">
@@ -617,7 +617,7 @@ function Contact() {
   return (
     <section id="contact" className="border-b-4 border-primary bg-surface/40">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-32">
-        <SectionLabel n="05">Contact</SectionLabel>
+        <SectionLabel n="06">Contact</SectionLabel>
 
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
