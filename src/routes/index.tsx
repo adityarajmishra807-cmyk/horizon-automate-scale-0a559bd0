@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { BlueprintHero } from "@/components/BlueprintHero";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
