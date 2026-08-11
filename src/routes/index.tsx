@@ -216,7 +216,7 @@ function Ticker() {
   const row = [...items, ...items, ...items, ...items];
   return (
     <div className="border-y-4 border-primary bg-primary text-primary-foreground overflow-hidden">
-      <div className="flex marquee whitespace-nowrap py-4">
+      <div className="flex marquee_mobile md:marquee_laptop whitespace-nowrap py-4">
         {row.map((t, i) => (
           <span key={i} className="font-display font-bold text-xl md:text-2xl px-8 flex items-center gap-8">
             {t} <span className="text-primary-foreground/60">✦</span>

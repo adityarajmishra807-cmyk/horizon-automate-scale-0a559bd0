@@ -152,8 +152,12 @@
   font-size: 0.75rem;
 }
 
-@utility marquee {
-  animation: marquee 40s linear infinite;
+@utility marquee_mobile {
+  animation: marquee 7s linear infinite;
+}
+
+@utility marquee_laptop {
+  animation: marquee 20s linear infinite;
 }
 
 @keyframes marquee {
