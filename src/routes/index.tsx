@@ -275,26 +275,9 @@ function Hero() {
           {/* RIGHT — geometric block + stats */}
           <div className="col-span-12 lg:col-span-4">
             <div className="relative brutal-border bg-surface aspect-[4/5] overflow-hidden">
-              <div className="absolute inset-0 grid-lines-dense" />
-              {/* concentric squares */}
-              <div className="absolute inset-8 border-2 border-primary/40" />
-              <div className="absolute inset-16 border-2 border-primary/60" />
-              <div className="absolute inset-24 border-2 border-primary" />
-              <motion.div
-                className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
-              />
-              {/* corner ticks */}
-              {["top-0 left-0", "top-0 right-0", "bottom-0 left-0", "bottom-0 right-0"].map((p) => (
-                <div key={p} className={`absolute ${p} w-6 h-6 bg-primary`} />
-              ))}
-              {/* readout */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between label-mono text-primary">
-                <span>N 40°42′</span>
-                <span>W 74°00′</span>
-              </div>
+              <BlueprintHero />
             </div>
+
 
             <div className="mt-6 grid grid-cols-3 lg:grid-cols-1 gap-4">
               {stats.map((s) => (
