@@ -71,10 +71,22 @@ const services = [
 ];
 
 const process = [
-  { n: "01", title: "Discovery", body: "Diagnose the business, quantify the gap, define the outcome." },
+  {
+    n: "01",
+    title: "Discovery",
+    body: "Diagnose the business, quantify the gap, define the outcome.",
+  },
   { n: "02", title: "Strategy", body: "Blueprint the system, map the stack, ship a written plan." },
-  { n: "03", title: "Execution", body: "Design, build, integrate. Weekly progress, no vanity meetings." },
-  { n: "04", title: "Scale", body: "Optimize, monitor, iterate. We stay accountable for the number." },
+  {
+    n: "03",
+    title: "Execution",
+    body: "Design, build, integrate. Weekly progress, no vanity meetings.",
+  },
+  {
+    n: "04",
+    title: "Scale",
+    body: "Optimize, monitor, iterate. We stay accountable for the number.",
+  },
 ];
 
 const portfolio = [
@@ -131,13 +143,21 @@ const pricing = [
   {
     name: "STARTER",
     price: "₹5,000",
-    description: "Perfect for small businesses and personal brands taking their first professional step online.",
-    features: ["3–5 pages", "Responsive design", "Contact / enquiry form", "Basic SEO", "Deployment"],
+    description:
+      "Perfect for small businesses and personal brands taking their first professional step online.",
+    features: [
+      "3–5 pages",
+      "Responsive design",
+      "Contact / enquiry form",
+      "Basic SEO",
+      "Deployment",
+    ],
   },
   {
     name: "PROFESSIONAL",
     price: "₹10,000",
-    description: "Our most popular choice for growing businesses that need a polished, high-converting presence.",
+    description:
+      "Our most popular choice for growing businesses that need a polished, high-converting presence.",
     features: [
       "5–8 pages",
       "Premium UI",
@@ -152,7 +172,8 @@ const pricing = [
   {
     name: "BUSINESS",
     price: "₹15,000+",
-    description: "Built for serious businesses that need custom systems, automation, and ongoing control.",
+    description:
+      "Built for serious businesses that need custom systems, automation, and ongoing control.",
     features: [
       "Custom design",
       "Advanced animations",
@@ -194,11 +215,21 @@ function Nav() {
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 label-mono text-muted-foreground">
-          <a href="#services" className="hover:text-primary transition-colors">Services</a>
-          <a href="#process" className="hover:text-primary transition-colors">Process</a>
-          <a href="#work" className="hover:text-primary transition-colors">Work</a>
-          <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
-          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+          <a href="#services" className="hover:text-primary transition-colors">
+            Services
+          </a>
+          <a href="#process" className="hover:text-primary transition-colors">
+            Process
+          </a>
+          <a href="#work" className="hover:text-primary transition-colors">
+            Work
+          </a>
+          <a href="#pricing" className="hover:text-primary transition-colors">
+            Pricing
+          </a>
+          <a href="#contact" className="hover:text-primary transition-colors">
+            Contact
+          </a>
         </nav>
         <a
           href="#contact"
@@ -212,13 +243,22 @@ function Nav() {
 }
 
 function Ticker() {
-  const items = ["WEBSITES", "AI AUTOMATION", "LEAD GENERATION", "WORKFLOW SYSTEMS", "GROWTH INFRASTRUCTURE"];
+  const items = [
+    "WEBSITES",
+    "AI AUTOMATION",
+    "LEAD GENERATION",
+    "WORKFLOW SYSTEMS",
+    "GROWTH INFRASTRUCTURE",
+  ];
   const row = [...items, ...items, ...items, ...items];
   return (
     <div className="border-y-4 border-primary bg-primary text-primary-foreground overflow-hidden">
       <div className="flex marquee_mobile md:marquee_laptop whitespace-nowrap py-4">
         {row.map((t, i) => (
-          <span key={i} className="font-display font-bold text-xl md:text-2xl px-8 flex items-center gap-8">
+          <span
+            key={i}
+            className="font-display font-bold text-xl md:text-2xl px-8 flex items-center gap-8"
+          >
             {t} <span className="text-primary-foreground/60">✦</span>
           </span>
         ))}
@@ -243,9 +283,12 @@ function Hero() {
           <div className="col-span-12 lg:col-span-8">
             <div className="label-mono text-primary mb-8">HORIZON WORKS / DIGITAL AGENCY</div>
             <h1 className="font-display font-bold tracking-tighter leading-[0.9] text-[15vw] md:text-[9.5rem] lg:text-[8.5rem] xl:text-[9.5rem]">
-              BUILDING<br />
-              <span className="text-primary">SYSTEMS</span><br />
-              THAT SCALE<br />
+              BUILDING
+              <br />
+              <span className="text-primary">SYSTEMS</span>
+              <br />
+              THAT SCALE
+              <br />
               BUSINESSES.
             </h1>
 
@@ -279,17 +322,17 @@ function Hero() {
               <BlueprintHero />
             </div>
 
-
-            <div className="mt-6 grid grid-cols-3 lg:grid-cols-1 gap-4">
+            <div className="mt-6 grid grid-cols-3 lg:grid-cols-1 gap-2 sm:gap-4">
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="brutal-border bg-background p-4 md:p-6 hover:bg-primary hover:text-primary-foreground transition-colors group"
+                  className="brutal-border bg-background p-3 sm:p-4 md:p-6 hover:bg-primary hover:text-primary-foreground transition-colors group min-w-0"
                 >
-                  <div className="font-display font-bold text-4xl md:text-5xl text-primary group-hover:text-primary-foreground">
+                  <div className="font-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl leading-none text-primary group-hover:text-primary-foreground">
                     {s.value}
                   </div>
-                  <div className="label-mono mt-2 text-muted-foreground group-hover:text-primary-foreground">
+
+                  <div className="label-mono mt-2 text-[9px] xs:text-[10px] sm:text-xs leading-tight break-words text-muted-foreground group-hover:text-primary-foreground">
                     {s.label}
                   </div>
                 </div>
@@ -311,7 +354,8 @@ function Services() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <h2 className="font-display font-bold text-5xl md:text-7xl leading-[0.9] mb-6">
-              Four disciplines.<br />
+              Four disciplines.
+              <br />
               <span className="text-primary">One system.</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-md">
@@ -456,9 +500,7 @@ function Results() {
                 i % 2 === 0 ? "border-r-4 lg:border-r-4 border-primary-foreground" : ""
               } ${i < 2 ? "border-b-4 lg:border-b-0 border-primary-foreground" : ""}`}
             >
-              <div className="font-display font-bold text-4xl md:text-6xl leading-none">
-                {r.v}
-              </div>
+              <div className="font-display font-bold text-4xl md:text-6xl leading-none">{r.v}</div>
               <div className="label-mono mt-4 opacity-80">{r.k}</div>
             </div>
           ))}
@@ -477,7 +519,8 @@ function Pricing() {
         <div className="grid grid-cols-12 gap-6 mb-16">
           <div className="col-span-12 lg:col-span-6">
             <h2 className="font-display font-bold text-5xl md:text-7xl leading-[0.9] mb-6">
-              Choose the right<br />
+              Choose the right
+              <br />
               <span className="text-primary">website</span> for your business.
             </h2>
           </div>
@@ -505,22 +548,30 @@ function Pricing() {
               )}
 
               <div className="mb-8">
-                <div className={`label-mono mb-4 ${plan.popular ? "text-primary-foreground/80" : "text-primary"}`}>
+                <div
+                  className={`label-mono mb-4 ${plan.popular ? "text-primary-foreground/80" : "text-primary"}`}
+                >
                   {plan.name}
                 </div>
                 <div className="font-display font-bold text-5xl md:text-6xl leading-none mb-4">
                   {plan.price}
                 </div>
-                <p className={`text-base leading-relaxed ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                <p
+                  className={`text-base leading-relaxed ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}
+                >
                   {plan.description}
                 </p>
               </div>
 
-              <div className={`flex-1 border-t-4 pt-8 mb-10 ${plan.popular ? "border-primary-foreground/30" : "border-primary/40"}`}>
+              <div
+                className={`flex-1 border-t-4 pt-8 mb-10 ${plan.popular ? "border-primary-foreground/30" : "border-primary/40"}`}
+              >
                 <ul className="space-y-4">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-4">
-                      <span className={`h-2 w-2 mt-2 shrink-0 ${plan.popular ? "bg-primary-foreground" : "bg-primary"}`} />
+                      <span
+                        className={`h-2 w-2 mt-2 shrink-0 ${plan.popular ? "bg-primary-foreground" : "bg-primary"}`}
+                      />
                       <span className="font-display font-bold text-lg leading-snug">{feature}</span>
                     </li>
                   ))}
@@ -545,7 +596,10 @@ function Pricing() {
         <div className="mt-16 text-center">
           <p className="text-muted-foreground text-lg md:text-xl">
             Need something custom?{" "}
-            <a href="#contact" className="text-primary font-display font-bold underline decoration-2 underline-offset-4 hover:text-electric transition-colors">
+            <a
+              href="#contact"
+              className="text-primary font-display font-bold underline decoration-2 underline-offset-4 hover:text-electric transition-colors"
+            >
               Let's build it around your business.
             </a>
           </p>
@@ -564,7 +618,8 @@ function FAQ() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-4">
             <h2 className="font-display font-bold text-5xl md:text-6xl leading-[0.9]">
-              Straight<br />
+              Straight
+              <br />
               <span className="text-primary">answers.</span>
             </h2>
           </div>
@@ -613,8 +668,10 @@ function Contact() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <h2 className="font-display font-bold text-5xl md:text-7xl leading-[0.9]">
-              LET'S BUILD<br />
-              <span className="text-primary">SOMETHING</span><br />
+              LET'S BUILD
+              <br />
+              <span className="text-primary">SOMETHING</span>
+              <br />
               THAT LASTS.
             </h2>
             <p className="text-muted-foreground text-lg mt-8 max-w-md">
@@ -753,19 +810,54 @@ function Footer() {
           <div className="col-span-6 md:col-span-3">
             <div className="label-mono text-primary mb-4">MENU</div>
             <ul className="space-y-2 font-display text-lg">
-              <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#process" className="hover:text-primary transition-colors">Process</a></li>
-              <li><a href="#work" className="hover:text-primary transition-colors">Work</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
+              <li>
+                <a href="#services" className="hover:text-primary transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#process" className="hover:text-primary transition-colors">
+                  Process
+                </a>
+              </li>
+              <li>
+                <a href="#work" className="hover:text-primary transition-colors">
+                  Work
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="hover:text-primary transition-colors">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-primary transition-colors">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
           <div className="col-span-6 md:col-span-3">
             <div className="label-mono text-primary mb-4">CONTACT</div>
             <ul className="space-y-2 font-display text-lg">
-              <li><a href="mailto:hello@horizonworks.co" className="hover:text-primary transition-colors">hello@horizonworks.co</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">WhatsApp</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
+              <li>
+                <a
+                  href="mailto:hello@horizonworks.co"
+                  className="hover:text-primary transition-colors"
+                >
+                  hello@horizonworks.co
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
