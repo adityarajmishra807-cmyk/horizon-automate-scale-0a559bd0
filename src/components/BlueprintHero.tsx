@@ -122,7 +122,14 @@ export function BlueprintHero() {
           {NODES.map((n, i) => (
             <motion.path
               key={n.label}
-              d={`M400 500 L${n.x} ${n.y}`}
+              d={(() => {
+                const dx = n.x - 400;
+                const dy = n.y - 500;
+                const len = Math.hypot(dx, dy);
+                const sx = 400 + (dx / len) * 150;
+                const sy = 500 + (dy / len) * 150;
+                return `M${sx} ${sy} L${n.x} ${n.y}`;
+              })()}
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 1 }}
               transition={{ duration: 1.1, delay: 0.35 + i * 0.14, ease: "easeOut" }}
@@ -170,20 +177,24 @@ export function BlueprintHero() {
         ))}
 
         {/* core bracket marks */}
-        <g stroke="var(--primary)" strokeWidth="1.5" fill="none" strokeOpacity="0.8">
+        <motion.g
+          stroke="var(--primary)"
+          strokeWidth="1.5"
+          fill="none"
+          strokeOpacity="0.8"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 160, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "400px 500px" }}
+        >
           <path d="M292 418v-18h18" />
           <path d="M508 418v-18h-18" />
           <path d="M292 582v18h18" />
           <path d="M508 582v18h-18" />
-        </g>
+        </motion.g>
 
         {/* central H/W monogram */}
-        <motion.g
-          animate={{ rotate: 360 }}
-          transition={{ duration: 140, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "400px 500px" }}
-        >
-          <g transform="translate(310 430)">
+        <g>
+          <g transform="translate(312 430)">
             {/* H */}
             <rect x="0" y="0" width="24" height="140" fill="var(--primary)" />
             <rect x="0" y="59" width="60" height="22" fill="var(--primary)" />
@@ -197,7 +208,7 @@ export function BlueprintHero() {
               strokeLinejoin="miter"
             />
           </g>
-        </motion.g>
+        </g>
 
         {/* scale bar */}
         <g stroke="var(--primary)" strokeOpacity="0.7" strokeWidth="1">
