@@ -120,12 +120,9 @@ export function BlueprintHero() {
         {/* connection lines drawing outward from the core */}
         <g stroke="var(--primary)" strokeWidth="1.25" strokeOpacity="0.75" fill="none">
           {NODES.map((n, i) => (
-            <motion.line
+            <motion.path
               key={n.label}
-              x1="400"
-              y1="500"
-              x2={n.x}
-              y2={n.y}
+              d={`M400 500 L${n.x} ${n.y}`}
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 1 }}
               transition={{ duration: 1.1, delay: 0.35 + i * 0.14, ease: "easeOut" }}
@@ -188,18 +185,17 @@ export function BlueprintHero() {
         >
           <g transform="translate(310 430)">
             {/* H */}
-            <rect x="0" y="0" width="26" height="140" fill="var(--primary)" />
-            <rect x="0" y="58" width="74" height="24" fill="var(--primary)" />
-            {/* W */}
+            <rect x="0" y="0" width="24" height="140" fill="var(--primary)" />
+            <rect x="0" y="59" width="60" height="22" fill="var(--primary)" />
+            <rect x="46" y="0" width="24" height="140" fill="var(--primary)" />
+            {/* W — angular, engineered */}
             <path
-              d="M62 0 L86 140 L112 62 L138 140 L162 0"
+              d="M86 0 L108 140 L131 66 L154 140 L176 0"
               fill="none"
               stroke="var(--primary)"
-              strokeWidth="25"
+              strokeWidth="22"
               strokeLinejoin="miter"
             />
-            {/* negative-space cut through the joint */}
-            <rect x="56" y="52" width="12" height="96" fill="var(--surface)" />
           </g>
         </motion.g>
 
