@@ -109,6 +109,7 @@ function LivePreview({ project, device }: { project: Project; device: DeviceId }
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const loadedRef = useRef(false);
 
   useEffect(() => {
     setLoaded(false);
@@ -120,7 +121,6 @@ function LivePreview({ project, device }: { project: Project; device: DeviceId }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project.url]);
 
-  const loadedRef = useRef(false);
   useEffect(() => {
     loadedRef.current = loaded;
   }, [loaded]);
@@ -149,7 +149,6 @@ function LivePreview({ project, device }: { project: Project; device: DeviceId }
               }}
               onError={() => setFailed(true)}
               referrerPolicy="no-referrer-when-downgrade"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               className="absolute inset-0 h-full w-full border-0 bg-background"
             />
           )}
