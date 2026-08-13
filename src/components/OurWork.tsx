@@ -35,6 +35,7 @@ const PROJECTS: Project[] = [
       "Responsive development",
       "Lead-generation structure",
     ],
+    embeddable: true,
   },
   {
     n: "02",
@@ -55,6 +56,7 @@ const PROJECTS: Project[] = [
       "Product storytelling",
       "Modern frontend development",
     ],
+    embeddable: false,
   },
   {
     n: "03",
@@ -75,6 +77,7 @@ const PROJECTS: Project[] = [
       "Responsive development",
       "Parent/student-friendly navigation",
     ],
+    embeddable: false,
   },
   {
     n: "04",
@@ -95,6 +98,7 @@ const PROJECTS: Project[] = [
       "Operational experience",
       "Responsive interface",
     ],
+    embeddable: false,
   },
 ];
 
