@@ -186,6 +186,60 @@ function LivePreview({ project, device }: { project: Project; device: DeviceId }
   );
 }
 
+function ProjectPreview({ project }: { project: Project }) {
+  return (
+    <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-ink/60 p-6 md:p-10">
+      {/* blueprint grid backdrop */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, oklch(0.76 0.135 88 / 0.12) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.76 0.135 88 / 0.12) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 border-[1px] border-primary/20" />
+      <div className="pointer-events-none absolute inset-8 border-[1px] border-primary/15" />
+      <div className="pointer-events-none absolute inset-16 border-[1px] border-primary/10" />
+
+      {/* corner crosshairs */}
+      <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+        <g stroke="var(--primary)" strokeOpacity="0.25" strokeWidth="1">
+          <line x1="32" y1="28" x2="32" y2="48" />
+          <line x1="22" y1="38" x2="42" y2="38" />
+          <line x1="32" y1="100%" x2="32" y2="calc(100% - 28px)" transform="translate(0,-20)" />
+          <line x1="22" y1="100%" x2="42" y2="100%" transform="translate(0,-38)" />
+        </g>
+      </svg>
+
+      <div className="relative z-10 flex w-full max-w-2xl flex-col items-center text-center">
+        <div className="label-mono text-primary">PROJECT PREVIEW</div>
+        <h4 className="font-display mt-4 text-3xl font-bold uppercase leading-none md:text-5xl">
+          {project.name}
+        </h4>
+        <p className="label-mono mt-3 text-muted-foreground">{project.type}</p>
+
+        <ul className="mt-6 flex flex-wrap justify-center gap-2">
+          {project.capabilities.map((c) => (
+            <li key={c} className="label-mono border-2 border-primary/50 px-3 py-1.5">
+              {c}
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 brutal-border label-mono px-6 py-4 inline-flex items-center gap-2 bg-primary text-primary-foreground hover:-translate-x-1 hover:-translate-y-1 hover:brutal-shadow transition-transform"
+        >
+          OPEN LIVE SITE <ArrowUpRight className="!size-4" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function OurWork() {
   const [active, setActive] = useState(0);
   const [device, setDevice] = useState<DeviceId>("desktop");
