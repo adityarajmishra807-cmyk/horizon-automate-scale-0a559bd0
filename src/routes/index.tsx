@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { BlueprintHero } from "@/components/BlueprintHero";
+import { OurWork } from "@/components/OurWork";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -86,37 +87,6 @@ const process = [
     n: "04",
     title: "Scale",
     body: "Optimize, monitor, iterate. We stay accountable for the number.",
-  },
-];
-
-const portfolio = [
-  {
-    tag: "PROJECT 01",
-    name: "Supplement Store",
-    scope: "E-commerce · Paid Acquisition",
-    metric: "+120%",
-    metricLabel: "Revenue Growth",
-  },
-  {
-    tag: "PROJECT 02",
-    name: "Boutique Restaurant",
-    scope: "Website · Reservations · Automation",
-    metric: "+62%",
-    metricLabel: "Reservations / Month",
-  },
-  {
-    tag: "PROJECT 03",
-    name: "B2B Consultancy",
-    scope: "Lead Gen · AI Qualification",
-    metric: "3.4×",
-    metricLabel: "Qualified Pipeline",
-  },
-  {
-    tag: "PROJECT 04",
-    name: "SaaS Platform",
-    scope: "Onboarding · Workflow Automation",
-    metric: "−78%",
-    metricLabel: "Manual Ops Time",
   },
 ];
 
@@ -426,55 +396,6 @@ function Process() {
               </p>
               <div className="absolute top-6 right-6 label-mono opacity-40">STEP</div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Portfolio() {
-  return (
-    <section id="work" className="border-b-4 border-primary">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-32">
-        <SectionLabel n="03">Portfolio</SectionLabel>
-
-        <div className="flex flex-col gap-8">
-          {portfolio.map((p, i) => (
-            <motion.a
-              href="#contact"
-              key={p.tag}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="brutal-border bg-background hover:bg-primary hover:text-primary-foreground transition-colors group block"
-            >
-              <div className="grid grid-cols-12 gap-6 items-center p-6 md:p-10">
-                <div className="col-span-12 md:col-span-2 label-mono text-primary group-hover:text-primary-foreground">
-                  {p.tag}
-                </div>
-                <div className="col-span-12 md:col-span-5">
-                  <h3 className="font-display font-bold text-3xl md:text-5xl uppercase leading-none">
-                    {p.name}
-                  </h3>
-                  <p className="label-mono text-muted-foreground group-hover:text-primary-foreground/70 mt-3">
-                    {p.scope}
-                  </p>
-                </div>
-                <div className="col-span-8 md:col-span-4 border-l-0 md:border-l-4 border-primary group-hover:border-primary-foreground pl-0 md:pl-8">
-                  <div className="font-display font-bold text-5xl md:text-6xl text-primary group-hover:text-primary-foreground leading-none">
-                    {p.metric}
-                  </div>
-                  <div className="label-mono mt-2 text-muted-foreground group-hover:text-primary-foreground/70">
-                    {p.metricLabel}
-                  </div>
-                </div>
-                <div className="col-span-4 md:col-span-1 flex justify-end">
-                  <ArrowUpRight className="!size-10 md:!size-14 group-hover:rotate-45 transition-transform" />
-                </div>
-              </div>
-            </motion.a>
           ))}
         </div>
       </div>
@@ -880,7 +801,7 @@ function HorizonHome() {
       <Ticker />
       <Services />
       <Process />
-      <Portfolio />
+      <OurWork />
       <Results />
       <Pricing />
       <FAQ />
