@@ -13,6 +13,7 @@ type Project = {
   description: string;
   capabilities: string[];
   highlights: string[];
+  embeddable: boolean;
 };
 
 const PROJECTS: Project[] = [
