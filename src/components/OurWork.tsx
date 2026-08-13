@@ -305,23 +305,25 @@ export function OurWork() {
 
           {/* preview column */}
           <div className="col-span-12 lg:col-span-8 order-2 flex flex-col gap-6">
-            {/* device selector */}
-            <div className="flex items-center gap-0 brutal-border w-fit">
-              {DEVICES.map((d) => (
-                <button
-                  key={d.id}
-                  type="button"
-                  onClick={() => setDevice(d.id)}
-                  className={`label-mono px-4 md:px-6 py-3 border-r-4 last:border-r-0 border-primary transition-colors ${
-                    device === d.id
-                      ? "bg-primary text-primary-foreground"
-                      : "hover:bg-primary/10 text-muted-foreground"
-                  }`}
-                >
-                  {d.label}
-                </button>
-              ))}
-            </div>
+            {/* device selector — only meaningful for live iframe projects */}
+            {project.embeddable && (
+              <div className="flex items-center gap-0 brutal-border w-fit">
+                {DEVICES.map((d) => (
+                  <button
+                    key={d.id}
+                    type="button"
+                    onClick={() => setDevice(d.id)}
+                    className={`label-mono px-4 md:px-6 py-3 border-r-4 last:border-r-0 border-primary transition-colors ${
+                      device === d.id
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-primary/10 text-muted-foreground"
+                    }`}
+                  >
+                    {d.label}
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* browser frame */}
             <div className="brutal-border bg-surface">
@@ -357,10 +359,14 @@ export function OurWork() {
               </div>
 
               {inView ? (
-                <LivePreview project={project} device={device} />
+                project.embeddable ? (
+                  <LivePreview project={project} device={device} />
+                ) : (
+                  <ProjectPreview project={project} />
+                )
               ) : (
                 <div className="aspect-[16/10] flex items-center justify-center label-mono text-muted-foreground">
-                  LIVE PREVIEW
+                  {project.embeddable ? "LIVE PREVIEW" : "PROJECT PREVIEW"}
                 </div>
               )}
             </div>
