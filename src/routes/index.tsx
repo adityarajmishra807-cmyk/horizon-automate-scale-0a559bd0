@@ -11,7 +11,7 @@ import {
   Mail,
   Phone,
   MessageSquare,
-  Calendar,
+  Instagram,
 } from "lucide-react";
 import logoMark from "@/assets/horizon-works-mark.png.asset.json";
 
@@ -612,23 +612,37 @@ function Contact() {
                 </div>
               </a>
               <a
-                href="https://wa.me/10000000000"
+                href="https://wa.me/917355288959"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="brutal-border p-5 flex items-center gap-4 hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <MessageSquare className="!size-6 text-primary" />
                 <div>
                   <div className="label-mono text-muted-foreground">WHATSAPP</div>
-                  <div className="font-display font-bold text-lg">Message us directly</div>
+                  <div className="font-display font-bold text-lg">+91 73552 88959</div>
                 </div>
               </a>
               <a
-                href="#"
+                href="tel:+917355288959"
                 className="brutal-border p-5 flex items-center gap-4 hover:bg-primary hover:text-primary-foreground transition-colors"
               >
-                <Calendar className="!size-6 text-primary" />
+                <Phone className="!size-6 text-primary" />
                 <div>
-                  <div className="label-mono text-muted-foreground">BOOK A CALL</div>
-                  <div className="font-display font-bold text-lg">30-min discovery call</div>
+                  <div className="label-mono text-muted-foreground">CALL US</div>
+                  <div className="font-display font-bold text-lg">+91 73552 88959</div>
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com/horizonworks.co.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="brutal-border p-5 flex items-center gap-4 hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Instagram className="!size-6 text-primary" />
+                <div>
+                  <div className="label-mono text-muted-foreground">INSTAGRAM</div>
+                  <div className="font-display font-bold text-lg">@horizonworks.co.in</div>
                 </div>
               </a>
             </div>
@@ -770,13 +784,28 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="tel:+917355288959" className="hover:text-primary transition-colors">
+                  +91 73552 88959
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/917355288959"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
                   WhatsApp
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  LinkedIn
+                <a
+                  href="https://www.instagram.com/horizonworks.co.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Instagram
                 </a>
               </li>
             </ul>
