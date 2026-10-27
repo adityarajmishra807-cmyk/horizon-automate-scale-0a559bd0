@@ -11,7 +11,6 @@ import {
   Mail,
   Phone,
   MessageSquare,
-  Calendar,
   Instagram,
 } from "lucide-react";
 import logoMark from "@/assets/horizon-works-mark.png.asset.json";
