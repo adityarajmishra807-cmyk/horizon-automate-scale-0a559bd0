@@ -575,13 +575,13 @@ function Contact() {
 
             <div className="mt-10 flex flex-col gap-4">
               <a
-                href="mailto:hello@horizonworks.co"
+                href="mailto:horizonworks.co.in@gmail.com"
                 className="brutal-border p-5 flex items-center gap-4 hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Mail className="!size-6 text-primary group-hover:text-primary-foreground" />
                 <div>
                   <div className="label-mono text-muted-foreground">EMAIL</div>
-                  <div className="font-display font-bold text-lg">hello@horizonworks.co</div>
+                  <div className="font-display font-bold text-lg">horizonworks.co.in@gmail.com</div>
                 </div>
               </a>
               <a
@@ -750,10 +750,10 @@ function Footer() {
             <ul className="space-y-2 font-display text-lg">
               <li>
                 <a
-                  href="mailto:hello@horizonworks.co"
+                  href="mailto:horizonworks.co.in@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  hello@horizonworks.co
+                  horizonworks.co.in@gmail.com
                 </a>
               </li>
               <li>
@@ -804,7 +804,6 @@ function HorizonHome() {
       <Services />
       <Process />
       <OurWork />
-      <Results />
       <Pricing />
       <FAQ />
       <Contact />
