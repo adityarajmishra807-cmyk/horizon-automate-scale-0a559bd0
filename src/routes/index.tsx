@@ -403,33 +403,6 @@ function Process() {
   );
 }
 
-function Results() {
-  const results = [
-    { k: "AVG. TIME TO LAUNCH", v: "28 DAYS" },
-    { k: "AVG. PIPELINE LIFT", v: "3.1×" },
-    { k: "CLIENT RETENTION", v: "94%" },
-    { k: "HOURS AUTOMATED / MO", v: "1,200+" },
-  ];
-  return (
-    <section className="border-b-4 border-primary bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-16 md:py-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
-          {results.map((r, i) => (
-            <div
-              key={r.k}
-              className={`p-6 md:p-8 ${i < 3 ? "border-r-0 lg:border-r-4 border-primary-foreground" : ""} ${
-                i % 2 === 0 ? "border-r-4 lg:border-r-4 border-primary-foreground" : ""
-              } ${i < 2 ? "border-b-4 lg:border-b-0 border-primary-foreground" : ""}`}
-            >
-              <div className="font-display font-bold text-4xl md:text-6xl leading-none">{r.v}</div>
-              <div className="label-mono mt-4 opacity-80">{r.k}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Pricing() {
   return (
@@ -602,13 +575,13 @@ function Contact() {
 
             <div className="mt-10 flex flex-col gap-4">
               <a
-                href="mailto:hello@horizonworks.co"
+                href="mailto:horizonworks.co.in@gmail.com"
                 className="brutal-border p-5 flex items-center gap-4 hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Mail className="!size-6 text-primary group-hover:text-primary-foreground" />
                 <div>
                   <div className="label-mono text-muted-foreground">EMAIL</div>
-                  <div className="font-display font-bold text-lg">hello@horizonworks.co</div>
+                  <div className="font-display font-bold text-lg">horizonworks.co.in@gmail.com</div>
                 </div>
               </a>
               <a
@@ -777,10 +750,10 @@ function Footer() {
             <ul className="space-y-2 font-display text-lg">
               <li>
                 <a
-                  href="mailto:hello@horizonworks.co"
+                  href="mailto:horizonworks.co.in@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  hello@horizonworks.co
+                  horizonworks.co.in@gmail.com
                 </a>
               </li>
               <li>
@@ -831,7 +804,6 @@ function HorizonHome() {
       <Services />
       <Process />
       <OurWork />
-      <Results />
       <Pricing />
       <FAQ />
       <Contact />
