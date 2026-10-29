@@ -403,33 +403,6 @@ function Process() {
   );
 }
 
-function Results() {
-  const results = [
-    { k: "AVG. TIME TO LAUNCH", v: "28 DAYS" },
-    { k: "AVG. PIPELINE LIFT", v: "3.1×" },
-    { k: "CLIENT RETENTION", v: "94%" },
-    { k: "HOURS AUTOMATED / MO", v: "1,200+" },
-  ];
-  return (
-    <section className="border-b-4 border-primary bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-16 md:py-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
-          {results.map((r, i) => (
-            <div
-              key={r.k}
-              className={`p-6 md:p-8 ${i < 3 ? "border-r-0 lg:border-r-4 border-primary-foreground" : ""} ${
-                i % 2 === 0 ? "border-r-4 lg:border-r-4 border-primary-foreground" : ""
-              } ${i < 2 ? "border-b-4 lg:border-b-0 border-primary-foreground" : ""}`}
-            >
-              <div className="font-display font-bold text-4xl md:text-6xl leading-none">{r.v}</div>
-              <div className="label-mono mt-4 opacity-80">{r.k}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Pricing() {
   return (
