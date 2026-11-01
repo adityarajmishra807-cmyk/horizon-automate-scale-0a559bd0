@@ -164,3 +164,8 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* Hide the injected Lovable branding badge on the published site. */
+#lovable-badge {
+  display: none !important;
+}
